@@ -5,17 +5,13 @@ sections:
     component: HeroBlock
     type: heroblock
     content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
+      I'm a web developer and a blogger!
   - section_id: about
     component: ContentBlock
     type: contentblock
     title: About
     content: >-
-      This is the "about" excerpt. It can be used to provide a paragraph about
-      yourself that people can read on the homepage to get a sense of who you
-      are. There also exists a dedicated about page where you can write more
-      about yourself for those who are interested.
+      I'm working as a web developer since 2008. I love to solve hard tasks, learn new things and to use this knowledge right away. I look for a new experience!
     actions:
       - label: Contact Me
         url: /contact
