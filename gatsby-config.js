@@ -41,6 +41,7 @@ module.exports = {
       options: {
         trackingId: 'UA-156890926-1'
       }
-    }
+    },
+    `gatsby-plugin-twitter`
   ]
 };
