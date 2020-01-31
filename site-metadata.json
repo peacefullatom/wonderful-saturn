@@ -29,5 +29,10 @@
       }
     ]
   },
-  "title": "Yuriy' Blog"
+  "title": "Yuriy Markov",
+  "titleTemplate": "%s - Blogger and Developer",
+  "description": "I'm making this world better by teaching others to code and sharing productivity hacks",
+  "url": "https://scipios.netlify.com",
+  "image": "/images/thumb.gif",
+  "twitterUserName": "@markov_yuriy"
 }
