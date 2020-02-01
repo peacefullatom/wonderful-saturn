@@ -42,6 +42,15 @@ module.exports = {
         trackingId: 'UA-156890926-1'
       }
     },
-    `gatsby-plugin-twitter`
+    `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: 'https://scipios.netlify.com/',
+        sitemap: 'https://scipios.netlify.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    `gatsby-plugin-sitemap`
   ]
 };

@@ -29,10 +29,36 @@
       }
     ]
   },
-  "title": "Yuriy Markov",
+  "author": "Yuriy Markov",
+  "title": "Yuriy's Blog",
   "titleTemplate": "%s - Blogger and Developer",
   "description": "I'm making this world better by teaching others to code and sharing productivity hacks",
   "url": "https://scipios.netlify.com",
   "image": "/images/thumb.gif",
-  "twitterUserName": "@markov_yuriy"
+  "twitterUserName": "@markov_yuriy",
+  "siteUrl": "https://scipios.netlify.com/",
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "BEM",
+    "LESS",
+    "SASS",
+    "SCSS",
+    "Bootstrap",
+    "Tailwind",
+    "Angular",
+    "Motivation",
+    "Remote work",
+    "Remote",
+    "Productivity",
+    "Blogging",
+    "Front-end",
+    "Back-end",
+    "Node",
+    "js",
+    "ts",
+    "boost"
+  ]
 }
