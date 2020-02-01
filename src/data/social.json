@@ -25,6 +25,12 @@
       "url": "https://www.linkedin.com/in/yuriy-markov-797434b3/"
     },
     {
+      "type": "stackoverflow",
+      "title": "LinkedIn",
+      "icon": "fa-stack-overflow",
+      "url": "https://stackoverflow.com/users/8197904/scipios"
+    },
+    {
       "type": "facebook",
       "title": "Facebook",
       "icon": "fa-facebook",
