@@ -41,6 +41,12 @@
       "title": "Instagram",
       "icon": "fa-instagram",
       "url": "https://www.instagram.com/peacefullatom/"
+    },
+    {
+      "type": "medium",
+      "title": "Medium",
+      "icon": "fa-medium",
+      "url": "https://medium.com/@peacefullatom"
     }
   ]
 }
