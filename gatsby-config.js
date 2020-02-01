@@ -51,6 +51,12 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    `gatsby-plugin-sitemap`
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `https-scipios-netlify-com`
+      }
+    }
   ]
 };

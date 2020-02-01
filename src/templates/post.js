@@ -1,3 +1,4 @@
+import { CommentCount, Disqus } from 'gatsby-plugin-disqus';
 import _ from 'lodash';
 import moment from 'moment-strftime';
 import React from 'react';
@@ -8,11 +9,19 @@ import { htmlToReact, safePrefix } from '../utils';
 
 export default class Post extends React.Component {
   render() {
+    const url = 'https://scipios.netlify.com';
     const title = _.get(this.props, 'pageContext.frontmatter.title');
     const image = _.get(this.props, 'pageContext.frontmatter.content_img_path');
     const subtitle = _.get(this.props, 'pageContext.frontmatter.subtitle');
     const safeImage = safePrefix(image);
     const date = moment(_.get(this.props, 'pageContext.frontmatter.date'));
+    const pathname = this.props.location.pathname;
+    const blogIdentity = pathname.split('/')[2];
+    const disqusConfig = {
+      url: `${url}${pathname}`,
+      identifier: blogIdentity,
+      title: title
+    };
     return (
       <Layout {...this.props}>
         <SEO
@@ -23,6 +32,7 @@ export default class Post extends React.Component {
           article
         ></SEO>
         <article className="post post-full">
+          <CommentCount config={disqusConfig} placeholder={'...'} />
           <header className="post-header">
             <h1 className="post-title underline">{title}</h1>
           </header>
@@ -39,6 +49,7 @@ export default class Post extends React.Component {
             </time>
           </footer>
         </article>
+        <Disqus config={disqusConfig} />
       </Layout>
     );
   }
