@@ -57,6 +57,7 @@ module.exports = {
       options: {
         shortname: `https-scipios-netlify-com`
       }
-    }
+    },
+    `gatsby-plugin-favicon`
   ]
 };
