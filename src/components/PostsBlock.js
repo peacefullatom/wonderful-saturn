@@ -1,3 +1,4 @@
+import { CommentCount } from 'gatsby-plugin-disqus';
 import _ from 'lodash';
 import moment from 'moment-strftime';
 import React from 'react';
@@ -7,6 +8,7 @@ import { getPages, Link, safePrefix } from '../utils';
 export default class PostsBlock extends React.Component {
   render() {
     const actions = _.get(this.props, 'section.actions');
+
     let display_posts = _.orderBy(getPages(this.props.pageContext.pages, '/posts'), 'frontmatter.date', 'desc');
     let recent_posts = display_posts.slice(0, _.get(this.props, 'section.num_posts_displayed'));
     return (
@@ -18,6 +20,13 @@ export default class PostsBlock extends React.Component {
             const url = _.get(post, 'url');
             const title = _.get(post, 'frontmatter.title');
             const date = _.get(post, 'frontmatter.date');
+            const pathname = this.props.location.pathname;
+            const blogIdentity = pathname.split('/')[2];
+            const disqusConfig = {
+              url: `https://scipios.netlify.com${pathname}`,
+              identifier: blogIdentity,
+              title
+            };
             return (
               <article key={post_idx} className="post">
                 <div className="post-inside">
@@ -40,6 +49,9 @@ export default class PostsBlock extends React.Component {
                     <time className="published" dateTime={moment(date).strftime('%Y-%m-%d %H:%M')}>
                       {moment(date).strftime('%B %d, %Y')}
                     </time>
+                    <div>
+                      <CommentCount config={disqusConfig} placeholder={'...'} />
+                    </div>
                   </footer>
                 </div>
               </article>

@@ -20,7 +20,7 @@ export default class Post extends React.Component {
     const disqusConfig = {
       url: `${url}${pathname}`,
       identifier: blogIdentity,
-      title: title
+      title
     };
     return (
       <Layout {...this.props}>
