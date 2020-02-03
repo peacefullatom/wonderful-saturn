@@ -4,7 +4,7 @@ import React from 'react';
 import { Layout } from '../components';
 import { htmlToReact, safePrefix } from '../utils';
 
-export default class Page extends React.Component {
+export default class CommentPolicy extends React.Component {
   render() {
     const title = _.get(this.props, 'pageContext.frontmatter.title');
     const subtitle = _.get(this.props, 'pageContext.frontmatter.subtitle');
