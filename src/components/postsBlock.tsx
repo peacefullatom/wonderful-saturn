@@ -23,7 +23,7 @@ const PostsBlock: React.FC<TLayout> = ({ section, pageContext }) => {
           const url = post?.url ?? ``;
           const title = post?.frontmatter?.title;
           const date = post?.frontmatter?.date;
-          const pathname = location.pathname;
+          const pathname = window.location.pathname;
           const blogIdentity = pathname.split('/')[2];
           const disqusConfig = {
             url: `https://scipios.netlify.com${pathname}`,
