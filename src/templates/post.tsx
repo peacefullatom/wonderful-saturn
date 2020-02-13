@@ -9,14 +9,14 @@ import { TLayout } from '../types/types';
 import htmlToReact from '../utils/htmlToReact';
 import safePrefix from '../utils/safePrefix';
 
-const Post: React.FC<TLayout> = ({ pageContext }) => {
+const Post: React.FC<TLayout> = ({ pageContext, location }) => {
   const url = 'https://scipios.netlify.com';
   const title = pageContext?.frontmatter?.title ?? ``;
   const image = pageContext?.frontmatter?.content_img_path ?? ``;
   const subtitle = pageContext?.frontmatter?.subtitle;
   const safeImage = safePrefix(image);
   const date = moment(pageContext?.frontmatter?.date);
-  const pathname = document.location.pathname;
+  const pathname = location?.pathname ?? ``;
   const blogIdentity = pathname.split('/')[2];
   const disqusConfig = {
     url: `${url}${pathname}`,
@@ -62,6 +62,7 @@ const Post: React.FC<TLayout> = ({ pageContext }) => {
 
 Post.propTypes = {
   pageContext: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default Post;

@@ -10,7 +10,7 @@ import getPages from '../utils/getPages';
 import Link from '../utils/link';
 import safePrefix from '../utils/safePrefix';
 
-const Blog: React.FC<TLayout> = ({ pageContext }) => {
+const Blog: React.FC<TLayout> = ({ pageContext, location }) => {
   const displayPosts =
     pageContext && pageContext.pages ? getPages(pageContext.pages) : [];
   return (
@@ -21,7 +21,7 @@ const Blog: React.FC<TLayout> = ({ pageContext }) => {
           const url = post?.url;
           const title = post?.frontmatter?.title;
           const date = post?.frontmatter?.date;
-          const pathname = document.location.pathname;
+          const pathname = location?.pathname ?? ``;
           const blogIdentity = pathname.split('/')[2];
           const disqusConfig = {
             url: `https://scipios.netlify.com${pathname}`,
@@ -72,6 +72,7 @@ const Blog: React.FC<TLayout> = ({ pageContext }) => {
 
 Blog.propTypes = {
   pageContext: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export default Blog;
