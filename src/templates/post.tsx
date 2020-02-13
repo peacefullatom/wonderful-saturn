@@ -16,7 +16,7 @@ const Post: React.FC<TLayout> = ({ pageContext }) => {
   const subtitle = pageContext?.frontmatter?.subtitle;
   const safeImage = safePrefix(image);
   const date = moment(pageContext?.frontmatter?.date);
-  const pathname = window.location.pathname;
+  const pathname = document.location.pathname;
   const blogIdentity = pathname.split('/')[2];
   const disqusConfig = {
     url: `${url}${pathname}`,
