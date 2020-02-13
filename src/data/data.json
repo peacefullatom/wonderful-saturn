@@ -1,17 +1,1 @@
-{
-    "author": {
-        "name": "Yuriy Markov",
-        "avatar": "https://res.cloudinary.com/practicaldev/image/fetch/s--scfl4eP_--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/270314/2658d38c-81b0-4459-84eb-ea18d9b78afb.jpeg"
-    },
-    "social": {
-        "devto": {
-            "username": "peacefullatom"
-        },
-        "twitter": {
-            "username": "markov_yuriy"
-        },
-        "github": {
-            "username": "peacefullatom"
-        }
-    }
-}
+{"author":{"name":"Yuriy Markov","avatar":"https://res.cloudinary.com/practicaldev/image/fetch/s--scfl4eP_--/c_fill,f_auto,fl_progressive,h_640,q_auto,w_640/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/270314/2658d38c-81b0-4459-84eb-ea18d9b78afb.jpeg"},"social":{"devto":{"username":"peacefullatom"},"twitter":{"username":"markov_yuriy"},"github":{"username":"peacefullatom"}}}

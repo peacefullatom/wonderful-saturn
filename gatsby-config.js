@@ -2,62 +2,64 @@ module.exports = {
   pathPrefix: '/',
   siteMetadata: require('./site-metadata.json'),
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-source-data`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`
-      }
+        path: `${__dirname}/src/pages`,
+      },
     },
-    {
-      resolve: `gatsby-plugin-stackbit-static-sass`,
-      options: {
-        inputFile: `${__dirname}/src/sass/main.scss`,
-        outputFile: `${__dirname}/public/assets/css/main.css`
-      }
-    },
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-remark-component`]
-      }
-    },
-    {
-      resolve: `gatsby-remark-page-creator`,
-      options: {}
+        plugins: [`gatsby-remark-component`],
+      },
     },
     {
       resolve: `@stackbit/gatsby-plugin-menus`,
       options: {
         sourceUrlPath: `fields.url`,
         pageContextProperty: `menus`,
-        menus: require('./src/data/menus.json')
-      }
+        menus: require('./src/data/menus.json'),
+      },
+    },
+    `gatsby-source-data`,
+    {
+      resolve: `gatsby-remark-page-creator`,
+      options: {},
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-stackbit-static-sass`,
       options: {
-        trackingId: 'UA-156890926-1'
-      }
+        inputFile: `${__dirname}/src/sass/main.scss`,
+        outputFile: `${__dirname}/public/assets/css/main.css`,
+      },
     },
-    `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `https-scipios-netlify-com`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: 'https://scipios.netlify.com/',
         sitemap: 'https://scipios.netlify.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
-    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-disqus`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        shortname: `https-scipios-netlify-com`
-      }
+        trackingId: 'UA-156890926-1',
+      },
     },
-    `gatsby-plugin-favicon`
-  ]
+  ],
 };

@@ -1,24 +1,16 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from 'react';
 
-const React = require("react");
-const safePrefix = require("./src/utils/safePrefix").default;
+const safePrefix = require('./src/utils/safePrefix').default;
 
-exports.onRenderBody = function({ setHeadComponents, setPostBodyComponents }) {
-
-    setHeadComponents([
-        
-    ]);
+module.exports = {
+  onRenderBody: function({ setHeadComponents, setPostBodyComponents }) {
+    setHeadComponents([]);
 
     setPostBodyComponents([
-        <React.Fragment>
-            <script src={safePrefix('assets/js/plugins.js')}/>
-            <script src={safePrefix('assets/js/main.js')}/>
-            
-        </React.Fragment>
+      <React.Fragment key={0}>
+        <script src={safePrefix('assets/js/plugins.js')} />
+        <script src={safePrefix('assets/js/main.js')} />
+      </React.Fragment>,
     ]);
-
+  },
 };
