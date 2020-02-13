@@ -6,23 +6,17 @@ import React from 'react';
 import { Layout } from '../components';
 import SEO from '../components/seo';
 import { TLayout } from '../types/types';
+import disqusConfig from '../utils/disqusConfig';
 import htmlToReact from '../utils/htmlToReact';
 import safePrefix from '../utils/safePrefix';
 
 const Post: React.FC<TLayout> = ({ pageContext, location }) => {
-  const url = 'https://scipios.netlify.com';
   const title = pageContext?.frontmatter?.title ?? ``;
   const image = pageContext?.frontmatter?.content_img_path ?? ``;
   const subtitle = pageContext?.frontmatter?.subtitle;
   const safeImage = safePrefix(image);
   const date = moment(pageContext?.frontmatter?.date);
-  const pathname = location?.pathname ?? ``;
-  const blogIdentity = pathname.split('/')[2];
-  const disqusConfig = {
-    url: `${url}${pathname}`,
-    identifier: blogIdentity,
-    title,
-  };
+  const disqus = disqusConfig(location, title);
   return (
     <Layout pageContext={pageContext}>
       <SEO
@@ -33,7 +27,7 @@ const Post: React.FC<TLayout> = ({ pageContext, location }) => {
         article
       ></SEO>
       <article className="post post-full">
-        <CommentCount config={disqusConfig} placeholder={'...'} />
+        <CommentCount config={disqus} placeholder={'...'} />
         <header className="post-header">
           <h1 className="post-title underline">{title}</h1>
         </header>
@@ -55,7 +49,7 @@ const Post: React.FC<TLayout> = ({ pageContext, location }) => {
           </time>
         </footer>
       </article>
-      <Disqus config={disqusConfig} />
+      <Disqus config={disqus} />
     </Layout>
   );
 };

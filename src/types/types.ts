@@ -1,4 +1,5 @@
 import React from 'react';
+
 import components from '../components';
 
 export type TPage = {
@@ -125,4 +126,5 @@ export type TLayout = {
   children?: React.ReactNode;
   section?: TSection;
   pageContext?: TPageContext;
+  location?: any;
 };
